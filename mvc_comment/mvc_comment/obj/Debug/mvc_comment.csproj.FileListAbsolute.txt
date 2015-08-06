@@ -20,3 +20,7 @@ C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\bin\System.Web.WebPages.R
 C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\obj\Debug\mvc_comment.csprojResolveAssemblyReference.cache
 C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\obj\Debug\mvc_comment.dll
 C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\obj\Debug\mvc_comment.pdb
+C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\bin\EntityFramework.dll
+C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\bin\EntityFramework.SqlServer.dll
+C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\bin\EntityFramework.xml
+C:\Users\fatih\Desktop\Comment\mvc_comment\mvc_comment\bin\EntityFramework.SqlServer.xml

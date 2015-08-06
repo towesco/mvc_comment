@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mvcDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="commentTB">
+    <Key>
+      <PropertyRef Name="commntId" />
+    </Key>
+    <Property Name="commntId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="commend_user_id" Type="int" Nullable="false" />
+    <Property Name="comment_date" Type="datetime" Nullable="false" />
+    <Property Name="commnet_note" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="comment_reply_id" Type="int" Nullable="false" />
+    <Property Name="comment_excect_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_commentTB_commentTB">
+    <End Role="commentTB" Type="Self.commentTB" Multiplicity="1" />
+    <End Role="commentTB1" Type="Self.commentTB" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="commentTB">
+        <PropertyRef Name="commntId" />
+      </Principal>
+      <Dependent Role="commentTB1">
+        <PropertyRef Name="comment_reply_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mvcDBModelStoreContainer">
+    <EntitySet Name="commentTB" EntityType="Self.commentTB" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_commentTB_commentTB" Association="Self.FK_commentTB_commentTB">
+      <End Role="commentTB" EntitySet="commentTB" />
+      <End Role="commentTB1" EntitySet="commentTB" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

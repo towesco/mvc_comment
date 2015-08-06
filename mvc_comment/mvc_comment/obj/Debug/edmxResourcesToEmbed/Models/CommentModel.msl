@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mvcDBModelStoreContainer" CdmEntityContainer="mvcDBEntities1">
+    <EntitySetMapping Name="commentTB">
+      <EntityTypeMapping TypeName="mvcDBModel.commentTB">
+        <MappingFragment StoreEntitySet="commentTB">
+          <ScalarProperty Name="commentExceptId" ColumnName="commentExceptId" />
+          <ScalarProperty Name="commentReplyId" ColumnName="commentReplyId" />
+          <ScalarProperty Name="commentNote" ColumnName="commentNote" />
+          <ScalarProperty Name="commentDate" ColumnName="commentDate" />
+          <ScalarProperty Name="commentUserId" ColumnName="commentUserId" />
+          <ScalarProperty Name="commentId" ColumnName="commentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
