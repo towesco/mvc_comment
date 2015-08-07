@@ -148,6 +148,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="comment_content\comment.js" />
+    <Content Include="comment_content\jquery.validate.min.js" />
+    <Content Include="comment_content\loading.css" />
+    <Content Include="comment_content\loading.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -161,7 +164,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Views\Shared\partial_views\commnet_send_pv.cshtml" />
+    <Content Include="Views\Shared\partial_views\commentSavePv.cshtml" />
     <EntityDeploy Include="Models\CommentModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CommentModel.Designer.cs</LastGenOutput>
@@ -194,6 +197,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\partial_views\commentListPv.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

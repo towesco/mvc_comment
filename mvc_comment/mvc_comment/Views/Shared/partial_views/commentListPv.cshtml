@@ -1,0 +1,92 @@
+﻿@using mvc_comment
+@using mvc_comment.Models
+@model List<commentTB>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+   
+
+    });
+</script>
+
+<!-- Contenedor Principal -->
+<div class="comments-container">
+
+    <ul id="comments-list" class="comments-list">
+        @foreach (var item in Model)
+        {
+
+            <li>
+                <div class="comment-main-level">
+                    <!-- Avatar -->
+                    @*@item.commentUserId  ile ayrı tabloda tutuğumuz  üyenin resmini çekebiliriz*@
+                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
+                    <!-- Contenedor del Comentario -->
+
+                    <div class="comment-box">
+                        <div class="comment-head">
+                            <div>
+                                <div class="col-md-3">
+                                    <strong>Fatih Ç.</strong>
+                                </div>
+                                <div class="col-md-5">
+                                    <small class="text-muted">  @item.commentDate.ToLongDateString()</small>
+                                </div>
+                                <div class="col-md-4 text-right">
+
+                                    <button data-id="@item.commentId" type="button" class="btn btn-default btn-sm replyBtn">
+                                        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-content">
+                            @item.commentNote
+                        </div>
+                    </div>
+                </div>
+
+                @if (item.commentTB1.Any())
+                {
+                    <ul class="comments-list reply-list">
+                        @foreach (commentTB reply in item.commentTB1)
+                        {
+
+                            <li>
+                                <!-- Avatar -->
+                                <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+                                <!-- Contenedor del Comentario -->
+                                <div class="comment-box">
+                                    <div class="comment-head">
+                                        <div>
+                                            <div class="col-md-3">
+                                                <strong>Fatih Ç.</strong>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <small class="text-muted">  @item.commentDate.ToLongDateString()</small>
+                                            </div>
+                                            <div class="col-md-4 text-right">
+
+                                                <button data-id="@item.commentId" type="button" class="btn btn-default btn-sm replyBtn">
+                                                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-content">
+                                        @reply.commentNote
+                                    </div>
+                                </div>
+                            </li>
+
+                        }
+                    </ul>
+
+                }
+            </li>
+
+        }
+    </ul>
+</div>
