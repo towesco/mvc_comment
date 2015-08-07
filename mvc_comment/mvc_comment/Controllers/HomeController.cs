@@ -10,10 +10,6 @@ namespace mvc_comment.Controllers
 
         public ActionResult Index()
         {
-
-            var c = new CommentApp();
-           // ViewBag.CommentList = c.GetCommentList();
-
             return View();
         }
 
@@ -22,19 +18,6 @@ namespace mvc_comment.Controllers
             var app = new CommentApp();
 
             return Json(app.CommentSave(c), JsonRequestBehavior.AllowGet);
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }

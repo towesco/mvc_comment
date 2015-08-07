@@ -4,8 +4,8 @@
     <EntitySetMapping Name="commentTB">
       <EntityTypeMapping TypeName="mvcDBModel.commentTB">
         <MappingFragment StoreEntitySet="commentTB">
-          <ScalarProperty Name="commentReplyId" ColumnName="commentReplyId" />
           <ScalarProperty Name="commentExceptId" ColumnName="commentExceptId" />
+          <ScalarProperty Name="commentReplyId" ColumnName="commentReplyId" />
           <ScalarProperty Name="commentNote" ColumnName="commentNote" />
           <ScalarProperty Name="commentDate" ColumnName="commentDate" />
           <ScalarProperty Name="commentUserId" ColumnName="commentUserId" />

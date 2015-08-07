@@ -1,5 +1,4 @@
-﻿@using mvc_comment
-@{
+﻿@{
     Layout = null;
 }
 
@@ -10,41 +9,26 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <script src="~/Scripts/jquery-1.9.1.js"></script>
-    <script src="~/comment_content/loading.js"></script>
-    <link href="~/comment_content/loading.css" rel="stylesheet" />
-
-    <script src="~/comment_content/jquery.validate.min.js"></script>
-
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+
     <script src="~/comment_content/comment.js"></script>
 
     <link href="~/comment_content/comment.css" rel="stylesheet" />
+
+
 </head>
 <body>
-    <div class="container" style="margin-top: 20px;">
-       
-        <div class="col-md-10">
+    <div class="container">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
 
-            @Html.Partial(partialViewName: "partial_views/commentSavePv")
-            
-       
+            @Html.Partial(partialViewName: "partial_views/commnet_send_pv")
         </div>
-    
-
-       
-        
-        <div class="col-md-10" >
-            <hr />
-            @Html.Partial(partialViewName: "partial_views/commentListPv",model: new CommentApp().GetCommentList())
-            
-         
-
-        </div>
-        
-
+        <div class="col-md-3"></div>
     </div>
 
     <div>
