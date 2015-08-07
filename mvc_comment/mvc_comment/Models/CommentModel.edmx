@@ -54,7 +54,7 @@
           <Property Name="commentUserId" Type="Int32" Nullable="false" />
           <Property Name="commentDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="commentNote" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="commentReplyId" Type="Int32" />
+          <Property Name="commentReplyId" Type="Int32" Nullable="true" />
           <Property Name="commentExceptId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="commentTB1" Relationship="mvcDBModel.FK_commentTB_commentTB" FromRole="commentTB" ToRole="commentTB1" />
           <NavigationProperty Name="commentTB2" Relationship="mvcDBModel.FK_commentTB_commentTB" FromRole="commentTB1" ToRole="commentTB" />

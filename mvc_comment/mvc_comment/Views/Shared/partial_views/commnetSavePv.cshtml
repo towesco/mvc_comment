@@ -1,0 +1,46 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+
+        var commentReplyId = null;
+        var l = Ladda.create(document.querySelector('#commentSaveBtn'));
+        l.stop();
+
+        $(".replyBtn").click(function () {
+            var body = $("html, body");
+            commentReplyId = $(this).attr("data-id");
+            $("#commentSaveForm label").text("Fatih Ç. kullanıcısına cevabınız..");
+
+            body.stop().animate({ scrollTop: 0 }, '500', 'swing', function () {
+
+            });
+
+        });
+
+        $("#commentSaveBtn").click(function () {
+
+            if ($("#commentSaveForm").valid()) {
+
+                var url = "@Url.Action("CommentSave","Home")";
+                var commentUserId = 1;
+                var commentNote = $("#commentNote").val();
+                var commentExceptId = 1;
+
+                commentSave(commentUserId, commentNote, commentReplyId, commentExceptId, url);
+
+            }
+
+        });
+
+    })
+</script>
+
+<form id="commentSaveForm">
+    <div class="form-group">
+        <label for="commentNote">Yorumunuz</label>
+        <textarea name="commentNote" id="commentNote" class="form-control" rows="3" placeholder="Yorumunuz..."></textarea>
+    </div>
+
+    <button id="commentSaveBtn" class="btn btn-primary ladda-button" data-style="expand-right">
+        <span class="ladda-label"> Gönder </span>
+    </button>
+</form>
