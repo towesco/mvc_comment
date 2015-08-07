@@ -2,77 +2,134 @@
 @using mvc_comment.Models
 @model  List<commentTB>
 
-<div class="comments-container">
-    <h2>Yorumlar</h2>
+<link href="~/comment_content/comment2.css" rel="stylesheet" />
 
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Yorumlar</h2>
+        </div>
+    </div>
     @if (Model.Any())
     {
-        <ul id="comments-list" class="comments-list">
+        <ul class="list-unstyled commentList" >
+            
+            <li>
+                <div class="row approval">
+                
+                    
+                    
+                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
 
-            @foreach (commentTB item in Model)
+                        <img id="approvalImage" class="img-thumbnail img-circle hidden-xs" style="width: 80px;" src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg">
+                    </div><!-- /col-sm-1 -->
+
+                    <div class="col-sm-10" style="margin-top: 12px;">
+                     
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+
+
+                                <strong id="approvalName">Fatih Ç</strong> <small class="text-muted">@DateTime.Now.ToLongDateString()</small>
+                                <span class="label label-default">Yorumunuz onay aşamasında...</span>
+                                <button style="margin: -4px;" type="button" class="btn btn-default btn-sm  replyBtn text-right pull-right">
+                                    <span class="glyphicon glyphicon-share-alt"></span>
+                                </button>
+
+
+
+
+                            </div>
+                            <div id="approvalNote" class="panel-body">
+                                
+                            </div><!-- /panel-body -->
+                        </div><!-- /panel panel-default -->
+                    </div><!-- /col-sm-5 -->
+                </div>
+            </li>
+            
+            
+            
+            
+          
+
+            @foreach (var item in Model)
             {
                 <li>
-                    <div class="comment-main-level">
-                        <!-- Avatar -->
-                        <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
-                        <!-- Contenedor del Comentario -->
-                        <div class="comment-box">
-                            <div class="comment-head">
-                                <div class="col-md-3"><strong>Fatih Ç</strong></div>
-                                <div class="col-md-5"><small class="text-muted">@item.commentDate.ToLongDateString()</small></div>
-                                <div class="col-md-4 text-right">
+                    <div class="row">
+                        <div class="col-sm-2 text-right" style="padding-right: 0px;">
 
-                                    <button data-id="@item.commentId" type="button" class="btn btn-default btn-sm replyBtn">
+                            <img class="img-thumbnail img-circle hidden-xs" style="width: 80px;" src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg">
+                        </div><!-- /col-sm-1 -->
+
+                        <div class="col-sm-10" style="margin-top: 12px;">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    
+                                   
+                                    <strong>Fatih Ç</strong> <small class="text-muted">@item.commentDate.ToLongDateString()</small>
+                                    
+                                    <button style="margin: -4px;" data-id="@item.commentId" type="button" class="btn btn-default btn-sm  replyBtn text-right pull-right">
                                         <span class="glyphicon glyphicon-share-alt"></span>
                                     </button>
+                                 
+                                    
+                                    
+
                                 </div>
-                            </div>
-                            <div class="comment-content">
-                                @item.commentNote
-                            </div>
-                        </div>
+                                <div class="panel-body">
+                                    @item.commentNote
+                                </div><!-- /panel-body -->
+                            </div><!-- /panel panel-default -->
+                        </div><!-- /col-sm-5 -->
                     </div>
 
-                    @if (item.commentTB1.Any())
+                    @foreach (var item2 in item.commentTB1)
                     {
-                        <ul class="comments-list reply-list">
-                            @foreach (commentTB item2 in item.commentTB1)
-                            {
 
-                                <li>
-                                    <!-- Avatar -->
-                                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                                    <!-- Contenedor del Comentario -->
-                                    <div class="comment-box">
-                                        <div class="comment-head">
-                                            <div class="col-md-3"><strong>Fatih Ç</strong></div>
-                                            <div class="col-md-5"><small class="text-muted">@item2.commentDate.ToLongDateString()</small></div>
-                                            <div class="col-md-4 text-right">
+                        <ul class="list-unstyled commentList replyList ">
+                            <li >
+                                <div class="row">
+                                    <div class="col-sm-2 text-right" style="padding-right: 0px;">
 
-                                                <button data-id="@item2.commentId" type="button" class="btn btn-default btn-sm replyBtn">
+                                        <img class="img-thumbnail img-circle hidden-xs" style="width: 60px;" src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg">
+                                    </div><!-- /col-sm-1 -->
+
+                                    <div class="col-sm-10" style="margin-top: 6px;">
+
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <strong>Fatih Ç</strong> <small class="text-muted">@item2.commentDate.ToLongDateString()</small>
+
+                                                <button style="margin: -4px;" data-id="@item2.commentId" type="button" class="btn btn-default btn-sm  replyBtn text-right pull-right">
                                                     <span class="glyphicon glyphicon-share-alt"></span>
                                                 </button>
-                                            </div>
-                                        </div>
-                                        <div class="comment-content">
-                                            @item.commentNote
-                                        </div>
-                                    </div>
-                                </li>
 
-                            }
-                        </ul>
+
+                                            </div>
+                                            <div class="panel-body">
+                                                @item2.commentNote
+                                            </div><!-- /panel-body -->
+                                        </div><!-- /panel panel-default -->
+                                    </div><!-- /col-sm-5 -->
+                                </div>
+                            </li>
+            </ul>
                     }
                 </li>
-            }
 
-            <!-- Respuestas de los comentarios -->
+            }
         </ul>
 
     }
     else
     {
-        //yorum olmadığında
+        //yorum yoksa
 
     }
-</div>
+    
+    </div>
+
+
+

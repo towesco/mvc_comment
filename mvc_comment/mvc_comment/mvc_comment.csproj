@@ -148,6 +148,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="comment_content\comment.js" />
+    <Content Include="comment_content\comment.css" />
     <Content Include="comment_content\jquery.validate.min.js" />
     <Content Include="comment_content\loading.css" />
     <Content Include="comment_content\loading.js" />
@@ -155,7 +156,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="comment_content\comment.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

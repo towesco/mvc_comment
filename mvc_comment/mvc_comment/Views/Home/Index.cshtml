@@ -19,6 +19,8 @@
 
     <script src="~/comment_content/comment.js"></script>
     <link href="~/comment_content/comment.css" rel="stylesheet" />
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
     <div class="container">
@@ -27,8 +29,8 @@
 
             @Html.Partial(partialViewName: "partial_views/commnetSavePv")
         </div>
-        <hr />
-        <div class="col-md-9">
+       
+        <div class="col-md-9" >
 
             @Html.Partial(partialViewName: "partial_views/commentListPv", model: new CommentApp().CommentList())
         </div>

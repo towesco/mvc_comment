@@ -1,14 +1,17 @@
 ﻿<script type="text/javascript">
     $(document).ready(function () {
-
         var commentReplyId = null;
         var l = Ladda.create(document.querySelector('#commentSaveBtn'));
         l.stop();
 
         $(".replyBtn").click(function () {
+
             var body = $("html, body");
             commentReplyId = $(this).attr("data-id");
             $("#commentSaveForm label").text("Fatih Ç. kullanıcısına cevabınız..");
+            $("#commentNote").val("");
+            $("#commentSaveBtn>span").text("Gönder").parent().removeClass("disabled").removeAttr("disabled");
+            $(".approval").slideUp();
 
             body.stop().animate({ scrollTop: 0 }, '500', 'swing', function () {
 

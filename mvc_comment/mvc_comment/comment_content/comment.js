@@ -11,6 +11,14 @@
             if (result) {
                 l.stop();
                 $("#commentSaveBtn>span").text("yorumunuz gönderilmiştir.").parent().addClass("disabled").attr("disabled", "disabled");
+
+
+                $("#approvalName").text("fatih");
+                $("#approvalImage").attr("src");
+                $("#approvalNote").html(commentNote);
+                $(".approval").slideDown("slow");
+
+
             } else {
             }
         }
